@@ -19,14 +19,18 @@ public class SaleMain {
         elist.add(new Sale(104, 30, 200));
         elist.add(new Sale(105, 40, 100));
 
-        // List<Sale> list1=
-        //   elist.stream().filter(p->p.getQuantity()>10).collect(Collectors.toList());
-        //   System.out.println("Product sale "+ list1);
+        List<Sale> list1=
+          elist.stream().filter(p->p.getQuantity()>10).collect(Collectors.toList());
+          System.out.println("Product sale "+ list1);
 
-        // List<ProductSale> list2=
-        //   elist.stream().map(sale-> new ProductSale(sale.getProductID(), sale.getQuantity()*sale.getPrice()))
-        //   .collect(Collectors.toList());
-        //   System.out.println("ProductID with revenue: "+list2);
+        System.out.println("*******************");
+
+        List<ProductSale> list2=
+          elist.stream().map(sale-> new ProductSale(sale.getProductID(), sale.getQuantity()*sale.getPrice()))
+          .collect(Collectors.toList());
+          System.out.println("ProductID with revenue: "+list2);
+
+        System.out.println("*******************");
 
         List<ProductSale> list3=
           elist.stream().map(sale-> new ProductSale(sale.getProductID(), sale.getQuantity()*sale.getPrice()))
